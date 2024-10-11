@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search and Delete Categories</title>
+</head>
+<body>
+<h2>Search and Delete Category</h2>
+
+<form th:action="@{/category/delete}" method="post">
+    <label for="name">Category Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter category name" />
+    <button type="submit">Search</button>
+</form>
+
+<h2>Search Results</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td th:text="${category.description}"></td>
+        <td>
+            <form th:action="@{/category/delete/{id}(id=${category.id})}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

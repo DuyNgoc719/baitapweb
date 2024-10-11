@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category Form</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/category.css}">
+</head>
+<body>
+    <div class="button-container">
+        <button type="submit" class="button" th:onclick="|window.location.href='@{/category/save}'|">Add</button>
+        <button type="submit" class="button" th:onclick="|window.location.href='@{/category/show}'|">Show</button>
+        <button type="button" class="button delete" th:onclick="|window.location.href='@{/category/delete}'|">Delete</button>
+        <button type="button" class="button edit" th:onclick="|window.location.href='@{/category/edit}'|">Edit</button>
+        <button type="button" class="button back" th:onclick="|window.location.href='@{/category}'|">Back</button>
+    </div>
+</body>
+</html>
